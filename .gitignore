@@ -1,0 +1,95 @@
+### Java ###
+*.class
+*.log
+*.ctxt
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+### Spring Boot ###
+# Target directory (Maven / Spring Boot)
+target/
+out/
+
+# Spring Boot devtools restart folder
+.spring-boot-devtools.properties
+
+### Maven ###
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/MavenWrapperDownloader.java
+.mvn/wrapper/
+!/.mvn/wrapper/maven-wrapper.jar
+
+# Maven build directory
+build/
+
+# IDE specific files
+### IntelliJ ###
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+### Eclipse ###
+.project
+.classpath
+.settings/
+bin/
+
+### VS Code ###
+.vscode/
+
+### Logs ###
+logs/
+*.log
+*.log.*
+hs_err_pid*
+replay_pid*
+
+### OS files ###
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### Postgres ###
+# If you mount a local PG data folder
+pgdata/
+postgres-data/
+*.sql~ 
+
+### Docker ###
+# Ignore bind-mounted volumes, cache, and build output
+docker-data/
+docker-compose.override.yml
+.env # only if you store secrets here
+
+### Misc ###
+# Ignore temp files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.orig
