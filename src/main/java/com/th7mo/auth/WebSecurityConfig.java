@@ -50,30 +50,24 @@ public class WebSecurityConfig {
 					org.springframework.security.config.http.SessionCreationPolicy.STATELESS)
 			)
 			.authorizeHttpRequests(a -> a
-				.requestMatchers("/api/login").permitAll()
+				.requestMatchers(HttpMethod.POST, "/api/login").permitAll()
 				.requestMatchers(HttpMethod.POST, "/api/customers").permitAll()
+				.requestMatchers(HttpMethod.GET, "/api/tracks").permitAll()
 
-				.requestMatchers(
-					HttpMethod.GET, "/api/customers/{id}"
-				).hasAnyRole("ADMIN", "CUSTOMER")
+				.requestMatchers(HttpMethod.GET, "/api/customers/{id}")
+				.hasAnyRole("ADMIN", "CUSTOMER")
 
-				.requestMatchers(
-					HttpMethod.DELETE, "/api/customers/{customerId}/cart/items/{trackId}"
-				).hasAnyRole("ADMIN", "CUSTOMER")
+				.requestMatchers(HttpMethod.DELETE, "/api/customers/{customerId}/cart/items/{trackId}")
+				.hasAnyRole("ADMIN", "CUSTOMER")
 
-				.requestMatchers(
-					HttpMethod.DELETE, "/api/customers/{customerId}/cart"
-				).hasAnyRole("ADMIN", "CUSTOMER")
+				.requestMatchers(HttpMethod.DELETE, "/api/customers/{customerId}/cart")
+				.hasAnyRole("ADMIN", "CUSTOMER")
 
-				.requestMatchers(
-					HttpMethod.POST, "/api/customers/{customerId}/cart/items/{trackId}"
-				).hasAnyRole("ADMIN", "CUSTOMER")
+				.requestMatchers(HttpMethod.POST, "/api/customers/{customerId}/cart/items/{trackId}")
+				.hasAnyRole("ADMIN", "CUSTOMER")
 
-				.requestMatchers(
-					HttpMethod.GET, "/api/tracks",
-					"/api/genres",
-					"/api/tracks/{id}"
-				).hasAnyRole("ADMIN", "CUSTOMER")
+				.requestMatchers(HttpMethod.GET, "/api/genres", "/api/tracks/{id}")
+				.hasAnyRole("ADMIN", "CUSTOMER")
 
 				.anyRequest().hasRole("ADMIN")
 			);
